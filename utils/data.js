@@ -2,6 +2,7 @@ const data = {
   products: [
     {
       name: "Sweet cakes",
+      slug: "sweet-cakes",
       category: "Cakes",
       images: "https://pic.cakesdecor.com/c700/udy1jdwqtcjf5vlrkflh.jpg",
       price: "70",
@@ -13,6 +14,7 @@ const data = {
     },
     {
       name: "Choco cakes",
+      slug: "choco-cakes",
       category: "Cakes",
       images:
         "https://nationaltoday.com/wp-content/uploads/2020/01/chocolatecake-1-640x514.jpg",
@@ -25,6 +27,7 @@ const data = {
     },
     {
       name: "lava cakes",
+      slug: "lava-cakes",
       category: "Cakes",
       images:
         "https://www.theflavorbender.com/wp-content/uploads/2019/01/Molten-Lava-Cake-The-Flavor-Bender-6933.jpg",
@@ -37,6 +40,7 @@ const data = {
     },
     {
       name: "kothhu",
+      slug: "kothhu",
       category: "food",
       images:
         "https://www.spicemountain.co.uk/wp-content/uploads/2019/10/Chicken-Kottu.jpg",
@@ -49,6 +53,7 @@ const data = {
     },
     {
       name: "chicken fried rice",
+      slug: "chicken-fried-rice",
       category: "food",
       images:
         "https://www.thespruceeats.com/thmb/s3IHuQNeKvDUGXU1lAybvFfhpmw=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-thai-chicken-fried-rice-3217140-Hero_01-5d07dca7cbe94e5db174d26dd4ea70bf.jpg",
@@ -61,6 +66,7 @@ const data = {
     },
     {
       name: "Noodle Soup",
+      slug: "noodle-soup",
       category: "soup",
       images:
         "https://www.errenskitchen.com/wp-content/uploads/2014/04/quick-and-easy-chinese-noodle-soup3-1-650x975.jpg",
@@ -73,6 +79,7 @@ const data = {
     },
     {
       name: "Vegi Soup",
+      slug: "vegi-soup",
       category: "soup",
       images:
         "https://thecozyapron.com/wp-content/uploads/2018/07/vegetable-soup_thecozyapron_1.jpg",
@@ -85,6 +92,7 @@ const data = {
     },
     {
       name: "rolls",
+      slug: "rolls",
       category: "shorteats",
       images:
         "https://www.cubesnjuliennes.com/wp-content/uploads/2021/01/Veggie-Spring-Rolls.jpg",

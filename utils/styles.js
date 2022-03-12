@@ -11,6 +11,13 @@ const useStyle = makeStyles({
   main: {
     minHeight: "80vh",
   },
+  brand: {
+    fontWeight: "bold",
+    fontSize: "1.5rem",
+  },
+  grow: {
+    flexGrow: 1,
+  },
   footer: {
     color: "#ffffff",
     backgroundColor: "#BA7C01",

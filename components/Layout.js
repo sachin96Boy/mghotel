@@ -1,5 +1,12 @@
-import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  Typography,
+  Link as MatLink,
+} from "@material-ui/core";
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 
 import useStyle from "../utils/styles";
@@ -13,7 +20,21 @@ function Layout({ children }) {
       </Head>
       <AppBar position="static" className={classes.navbar}>
         <Toolbar>
-          <Typography>MGHotel</Typography>
+          <Link href="/" passHref>
+            <MatLink>
+              <Typography className={classes.brand}>MGHotel</Typography>
+            </MatLink>
+          </Link>
+          <div className={classes.grow} />
+          <div>
+            <Link href="/cart" passHref>
+              <MatLink>Cart</MatLink>
+            </Link>
+
+            <Link href="/login" passHref>
+              <MatLink>login</MatLink>
+            </Link>
+          </div>
         </Toolbar>
       </AppBar>
       <Container className={classes.main}>{children}</Container>
