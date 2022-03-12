@@ -1,0 +1,100 @@
+const data = {
+  products: [
+    {
+      name: "Sweet cakes",
+      category: "Cakes",
+      images: "https://pic.cakesdecor.com/c700/udy1jdwqtcjf5vlrkflh.jpg",
+      price: "70",
+      brand: "Bashitha Cakes",
+      rating: "4.5",
+      numReviews: "10",
+      countInStock: "20",
+      description: "A populer Cake brand among locals",
+    },
+    {
+      name: "Choco cakes",
+      category: "Cakes",
+      images:
+        "https://nationaltoday.com/wp-content/uploads/2020/01/chocolatecake-1-640x514.jpg",
+      price: "80",
+      brand: "Bakes by bella Cakes",
+      rating: "4.7",
+      numReviews: "10",
+      countInStock: "20",
+      description: "A populer Cake brand among locals by bakes by bella",
+    },
+    {
+      name: "lava cakes",
+      category: "Cakes",
+      images:
+        "https://www.theflavorbender.com/wp-content/uploads/2019/01/Molten-Lava-Cake-The-Flavor-Bender-6933.jpg",
+      price: "100",
+      brand: "Little lion cakes",
+      rating: "4.1",
+      numReviews: "10",
+      countInStock: "20",
+      description: "A Little lion product fo the people",
+    },
+    {
+      name: "kothhu",
+      category: "food",
+      images:
+        "https://www.spicemountain.co.uk/wp-content/uploads/2019/10/Chicken-Kottu.jpg",
+      price: "120",
+      brand: "Kothhubum",
+      rating: "5.0",
+      numReviews: "10",
+      countInStock: "20",
+      description: "Parcel of kothhu to your doorsteap",
+    },
+    {
+      name: "chicken fried rice",
+      category: "food",
+      images:
+        "https://www.thespruceeats.com/thmb/s3IHuQNeKvDUGXU1lAybvFfhpmw=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-thai-chicken-fried-rice-3217140-Hero_01-5d07dca7cbe94e5db174d26dd4ea70bf.jpg",
+      price: "150",
+      brand: "RiceFood",
+      rating: "3.5",
+      numReviews: "10",
+      countInStock: "20",
+      description: "Rice for the hungry buds",
+    },
+    {
+      name: "Noodle Soup",
+      category: "soup",
+      images:
+        "https://www.errenskitchen.com/wp-content/uploads/2014/04/quick-and-easy-chinese-noodle-soup3-1-650x975.jpg",
+      price: "20",
+      brand: "NoodleGyu",
+      rating: "2.5",
+      numReviews: "10",
+      countInStock: "20",
+      description: "noodle soup for helthy tummy",
+    },
+    {
+      name: "Vegi Soup",
+      category: "soup",
+      images:
+        "https://thecozyapron.com/wp-content/uploads/2018/07/vegetable-soup_thecozyapron_1.jpg",
+      price: "30",
+      brand: "VegiSoup",
+      rating: "3.5",
+      numReviews: "10",
+      countInStock: "20",
+      description: "Vegi Soup for the locals",
+    },
+    {
+      name: "rolls",
+      category: "shorteats",
+      images:
+        "https://www.cubesnjuliennes.com/wp-content/uploads/2021/01/Veggie-Spring-Rolls.jpg",
+      price: "70",
+      brand: "shorteaters",
+      rating: "4.9",
+      numReviews: "10",
+      countInStock: "20",
+      description: "Short eats for your hungry needs",
+    },
+  ],
+};
+export default data;
