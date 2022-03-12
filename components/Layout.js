@@ -4,6 +4,7 @@ import {
   Toolbar,
   Typography,
   Link as MatLink,
+  createTheme,
 } from "@material-ui/core";
 import Head from "next/head";
 import Link from "next/link";
@@ -11,12 +12,14 @@ import React from "react";
 
 import useStyle from "../utils/styles";
 
-function Layout({ children }) {
+function Layout({ title, description, children }) {
+  const theme = createTheme();
   const classes = useStyle();
   return (
     <div>
       <Head>
-        <title>MGHotel</title>
+        <title>{title ? `${title} - MGHotel` : "MGHotel"}</title>
+        {description && <meta name="description" content={description} />}
       </Head>
       <AppBar position="static" className={classes.navbar}>
         <Toolbar>

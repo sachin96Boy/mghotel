@@ -23,6 +23,12 @@ const useStyle = makeStyles({
     backgroundColor: "#BA7C01",
     textAlign: "center",
     padding: "10px",
+    marginTop: "10px",
+    bottom: "0",
+  },
+  section: {
+    marginTop: "20px",
+    marginBottom: "20px",
   },
 });
 
