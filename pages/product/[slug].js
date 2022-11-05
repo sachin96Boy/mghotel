@@ -16,21 +16,23 @@ import db from "../../utils/db";
 import Product from "../../models/Product";
 import axios from "axios";
 import { Store } from "../../utils/store";
+import { Router, useRouter } from "next/router";
 
 function ProductScreen(props) {
+  const router = useRouter();
   const { dispatch } = useContext(Store);
   const { product } = props;
   const classes = useStyle();
 
-  const handleAddToCart = async() => {
+  const handleAddToCart = async () => {
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock <= 0) {
       window.alert("Sorry. Product is out of stock");
       return;
     }
     dispatch({ type: "CART_ADD_ITEM", payload: { ...data, quantity: 1 } });
-  }
-
+    router.push("/Cart");
+  };
 
   if (!product) {
     return <div>Product not found</div>;
@@ -57,7 +59,9 @@ function ProductScreen(props) {
         <Grid item md={3} xs={12}>
           <List>
             <ListItem>
-              <Typography component="h1" variant="h1">{product.name}</Typography>
+              <Typography component="h1" variant="h1">
+                {product.name}
+              </Typography>
             </ListItem>
             <ListItem>
               <Typography>Category: {product.category}</Typography>
@@ -84,9 +88,7 @@ function ProductScreen(props) {
                     <Typography>Price</Typography>
                   </Grid>
                   <Grid item xs={6}>
-                    <Typography component={"b"}>
-                      Rs {product.price}
-                    </Typography>
+                    <Typography component={"b"}>Rs {product.price}</Typography>
                   </Grid>
                 </Grid>
               </ListItem>
@@ -140,16 +142,14 @@ export async function getServerSideProps(context) {
   // get slug from params
   const { slug } = params;
   await db.connect();
-  const product = await Product.findOne({slug}).lean();
+  const product = await Product.findOne({ slug }).lean();
   await db.disconnect();
   return {
     props: {
       // single product converted to plain javascript object
       product: db.convertDocToObj(product),
     }, // will be passed to the page component as props
-  }
+  };
 }
 
 export default ProductScreen;
-
-
