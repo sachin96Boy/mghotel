@@ -1,7 +1,10 @@
 import {
   Button,
+  Card,
   Grid,
   Link as MatLink,
+  List,
+  ListItem,
   MenuItem,
   Select,
   Table,
@@ -12,6 +15,7 @@ import {
   TableRow,
   Typography,
 } from "@material-ui/core";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
@@ -62,10 +66,16 @@ function Cart() {
                       </TableCell>
                       <TableCell>
                         <Link href={`/product/${item.slug}`} passHref>
-                          <MatLink><Typography style={{
-                            fontWeight: "bold",
-                            fontSize: "1.5rem",
-                          }}>{item.name}</Typography></MatLink>
+                          <MatLink>
+                            <Typography
+                              style={{
+                                fontWeight: "bold",
+                                fontSize: "1.5rem",
+                              }}
+                            >
+                              {item.name}
+                            </Typography>
+                          </MatLink>
                         </Link>
                       </TableCell>
                       <TableCell align="right">
@@ -79,7 +89,9 @@ function Cart() {
                       </TableCell>
                       <TableCell align="right">Rs. {item.price}</TableCell>
                       <TableCell align="right">
-                        <Button variant="contained" color="secondary">Delete</Button>
+                        <Button variant="contained" color="secondary">
+                          Delete
+                        </Button>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -88,7 +100,22 @@ function Cart() {
             </TableContainer>
           </Grid>
           <Grid item md={3} xs={12}>
-            Cart actions
+            <Card>
+              <List>
+                <ListItem>
+                  <Typography variant="h2">
+                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
+                    items) : Rs.{" "}
+                    {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                    <Button variant="contained" color="primary" fullWidth>
+                        Proceed to Checkout
+                    </Button>
+                </ListItem>
+              </List>
+            </Card>
           </Grid>
         </Grid>
       )}
@@ -96,4 +123,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default dynamic(()=> Promise.resolve(Cart), {ssr: false});
