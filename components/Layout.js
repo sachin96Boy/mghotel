@@ -66,7 +66,14 @@ function Layout({ title, description, children }) {
               </MatLink>
             </Link>
             <div className={classes.grow} />
-            <div>
+            <div
+              style={{
+                gap: "20px",
+                display: "flex",
+                alignItems: "center",
+
+              }}
+            >
               <Switch
                 checked={darkMode}
                 onChange={darkModeChangeHandler}
@@ -74,7 +81,12 @@ function Layout({ title, description, children }) {
               <Link href="/cart" passHref>
                 <MatLink>
                   {cart.cartItems.length > 0 ? (
-                    <Badge color="secondary" badgeContent={cart.cartItems.length}>Cart</Badge>
+                    <Badge
+                      color="secondary"
+                      badgeContent={cart.cartItems.length}
+                    >
+                      Cart
+                    </Badge>
                   ) : (
                     "Cart"
                   )}
