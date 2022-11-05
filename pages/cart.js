@@ -23,10 +23,27 @@ import Layout from "../components/Layout";
 import { Store } from "../utils/store";
 
 function Cart() {
-  const { state } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems },
   } = state;
+
+  const updateCartHandler = async (item, quantity) => {
+    const { data } = await axios.get(`/api/products/${item._id}`);
+    if (data.countInStock < quantity) {
+      window.alert("Sorry. Product is out of stock");
+      return;
+    }
+    dispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...item, quantity },
+    });
+  };
+
+  const removeItemHandler = (item) => {
+    dispatch({ type: "CART_REMOVE_ITEM", payload: item });
+  };
+
   return (
     <Layout title={"Food Bucket"}>
       <Typography component={"h1"} variant="h1">
@@ -79,7 +96,12 @@ function Cart() {
                         </Link>
                       </TableCell>
                       <TableCell align="right">
-                        <Select value={item.quantity}>
+                        <Select
+                          value={item.quantity}
+                          onChange={(e) =>
+                            updateCartHandler(item, e.target.value)
+                          }
+                        >
                           {[...Array(item.countInStock).keys()].map((x) => (
                             <MenuItem key={x + 1} value={x + 1}>
                               {x + 1}
@@ -89,7 +111,11 @@ function Cart() {
                       </TableCell>
                       <TableCell align="right">Rs. {item.price}</TableCell>
                       <TableCell align="right">
-                        <Button variant="contained" color="secondary">
+                        <Button
+                          variant="contained"
+                          color="secondary"
+                          onClick={() => removeItemHandler(item)}
+                        >
                           Delete
                         </Button>
                       </TableCell>
@@ -110,9 +136,9 @@ function Cart() {
                   </Typography>
                 </ListItem>
                 <ListItem>
-                    <Button variant="contained" color="primary" fullWidth>
-                        Proceed to Checkout
-                    </Button>
+                  <Button variant="contained" color="primary" fullWidth>
+                    Proceed to Checkout
+                  </Button>
                 </ListItem>
               </List>
             </Card>
@@ -123,4 +149,4 @@ function Cart() {
   );
 }
 
-export default dynamic(()=> Promise.resolve(Cart), {ssr: false});
+export default dynamic(() => Promise.resolve(Cart), { ssr: false });

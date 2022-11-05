@@ -38,7 +38,12 @@ function reducer(state, action) {
           cartItems: [...state.cart.cartItems, item],
         },
       };
-    default:
+    case "CART_REMOVE_ITEM":
+      const cartItems = state.cart.cartItems.filter(
+        (x) => x._id !== action.payload._id
+      );
+      jsCookie.set("cartItems", JSON.stringify(cartItems));
+      default:
       return state;
   }
 }
