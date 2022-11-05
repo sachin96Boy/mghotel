@@ -7,17 +7,29 @@ import {
   ListItem,
   Typography,
 } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import useStyle from "../../utils/styles";
 import Image from "next/image";
 import db from "../../utils/db";
 import Product from "../../models/Product";
+import axios from "axios";
+import { Store } from "../../utils/store";
 
 function ProductScreen(props) {
+  const { dispatch } = useContext(Store);
   const { product } = props;
   const classes = useStyle();
+
+  const handleAddToCart = async() => {
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock <= 0) {
+      window.alert("Sorry. Product is out of stock");
+      return;
+    }
+    dispatch({ type: "CART_ADD_ITEM", payload: { ...data, quantity: 1 } });
+  }
 
 
   if (!product) {
@@ -98,6 +110,7 @@ function ProductScreen(props) {
                     fullWidth
                     variant="contained"
                     color="primary"
+                    onClick={handleAddToCart}
                   >
                     Add to cart
                   </Button>
