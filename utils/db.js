@@ -35,6 +35,9 @@ async function disconnect(){
     }
 }
 
+// convert mongoose model to json by 
+// stringfy and parse
+// mongoose documnet to json
 function convertDocToObj(doc){
     doc._id = doc._id.toString();
     doc.createdAt = doc.createdAt.toString();

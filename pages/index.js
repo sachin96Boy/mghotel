@@ -11,7 +11,6 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import data from "../utils/data";
 import db from "../utils/db";
 import Product from "../models/Product";
 
@@ -56,10 +55,12 @@ export default function Home(props) {
 
 export async function getServerSideProps(context) {
   await db.connect();
+  // lean will return a plain javascript object instead of mongoose document
   const products = await Product.find({}).lean();
   await db.disconnect();
   return {
     props: {
+      // convertdocuments to JSON objects
       products: products.map(db.convertDocToObj),
     }, // will be passed to the page component as props
   }
