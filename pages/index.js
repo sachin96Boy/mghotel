@@ -40,6 +40,7 @@ export default function Home(props) {
                   <Typography>
                     <b>Rs</b> {product.price}
                   </Typography>
+                  {/* add to cart functions */}
                   <Button size="small" color="primary">
                     Add to cart
                   </Button>
