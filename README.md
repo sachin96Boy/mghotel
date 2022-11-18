@@ -22,13 +22,13 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## screens
 
-![image](https://user-images.githubusercontent.com/76884959/126040201-5b5b2b1f-5b0f-4b0e-8b1a-8f9c1b2b8b1a.png)
+![image](https://github.com/sachin96Boy/mghotel/blob/main/snapshots/FireShot%20Capture%20039%20-%20MGHotel%20-%20localhost.png)
 
-![image](https://user-images.githubusercontent.com/76884959/126040205-1b5b2b1f-5b0f-4b0e-8b1a-8f9c1b2b8b1a.png)
+![image](https://github.com/sachin96Boy/mghotel/blob/main/snapshots/FireShot%20Capture%20040%20-%20MGHotel%20-%20localhost.png)
 
-![image](https://user-images.githubusercontent.com/76884959/126040208-5b5b2b1f-5b0f-4b0e-8b1a-8f9c1b2b8b1a.png)
+![image](https://github.com/sachin96Boy/mghotel/blob/main/snapshots/FireShot%20Capture%20041%20-%20Choco%20cakes%20-%20MGHotel%20-%20localhost.png)
 
-![image](https://user-images.githubusercontent.com/76884959/126040211-5b5b2b1f-5b0f-4b0e-8b1a-8f9c1b2b8b1a.png) 
+![image](https://github.com/sachin96Boy/mghotel/blob/main/snapshots/FireShot%20Capture%20042%20-%20Food%20Bucket%20-%20MGHotel%20-%20localhost.png) 
 
 ## Learn More
 
